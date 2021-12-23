@@ -12,15 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class PremiumService {
 
-    @Autowired
-    private PropertyRepository propertyRepository;
 
     @Autowired
     private PremiumRepository premiumRepository;
-
-    public Property findByUserId(Long id){
-        return propertyRepository.findByUserId(id);
-    }
 
     public void savePremium(Premium premium) {
         premiumRepository.save(premium);

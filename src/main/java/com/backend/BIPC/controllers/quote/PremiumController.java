@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -22,9 +23,6 @@ public class PremiumController {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private Property property;
 
     @Autowired
     private PremiumService premiumService;
@@ -40,9 +38,9 @@ public class PremiumController {
         PremiumResponse premiumResponse=null;
         try {
             User user = userRepository.findByUsername(test.getEmail());
-            Long userId = user.getId();
+            //Long userId = user.getId();
 
-            Property property = propertyRepository.findByUserId(userId);
+            Property property = propertyRepository.findByUser(user);
 
             premiumResponse = new PremiumResponse(
                     property.getId(),property.getItem(),
@@ -64,7 +62,9 @@ public class PremiumController {
 
         System.out.println(premiumRequest);
 
-        Property property = propertyRepository.findByPropertyId(premiumRequest.getPropertyId());
+        User user = userRepository.findByUsername(premiumRequest.getEmail());
+
+        Property property = propertyRepository.findByUser(user);
 
         System.out.println(property);
         Premium premium = new Premium(

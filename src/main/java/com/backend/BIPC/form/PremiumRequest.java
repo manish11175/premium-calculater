@@ -1,6 +1,7 @@
 package com.backend.BIPC.form;
 
 
+import com.backend.BIPC.entities.auth.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +16,5 @@ public class PremiumRequest {
    private Long id;
    private Double premium;
 
-   private Long propertyId;
+   private String email;
 }

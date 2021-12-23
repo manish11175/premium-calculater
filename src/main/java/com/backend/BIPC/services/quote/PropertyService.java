@@ -12,7 +12,7 @@ public class PropertyService {
     private PropertyRepository propertyRepository;
 
     public Property savePropertyDetails(Property propertyDetails){
-        Property property = propertyRepository.findByUserId(propertyDetails.getUser().getId());
+        Property property = propertyRepository.findByUser(propertyDetails.getUser());
         if (property==null){
             return propertyRepository.save(propertyDetails);
         }
