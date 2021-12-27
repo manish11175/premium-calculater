@@ -17,6 +17,19 @@ public class PremiumService {
     private PremiumRepository premiumRepository;
 
     public void savePremium(Premium premium) {
-        premiumRepository.save(premium);
+        Premium premium1=premiumRepository.findByProperty(premium.getProperty());
+        if(premium1==null){
+            premiumRepository.save(premium);
+        }
+        else{
+            premium1.setPremium(premium.getPremium());
+            premiumRepository.save(premium1);
+        }
+
+    }
+
+
+    public Premium getPremiumByProperty(Property property) {
+        return premiumRepository.findByProperty(property);
     }
 }

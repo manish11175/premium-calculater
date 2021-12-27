@@ -1,5 +1,7 @@
 package com.backend.BIPC.services.quote;
 
+import com.backend.BIPC.entities.auth.User;
+import com.backend.BIPC.entities.quote.Premium;
 import com.backend.BIPC.entities.quote.Property;
 import com.backend.BIPC.repositories.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +30,10 @@ public class PropertyService {
         }
 
     }
+
+    public Property getPropertyByUser(User user) {
+        return propertyRepository.findByUser(user);
+    }
+
+
 }

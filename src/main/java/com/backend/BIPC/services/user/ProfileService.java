@@ -1,5 +1,6 @@
 package com.backend.BIPC.services.user;
 
+import com.backend.BIPC.entities.auth.User;
 import com.backend.BIPC.entities.user.Profile;
 import com.backend.BIPC.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,13 @@ public class ProfileService {
     @Autowired
     private ProfileRepository profileRepository;
     public Profile save(Profile profile) {
-        return profileRepository.save(profile);
+
+
+        return profileRepository.save(profile
+        );
+    }
+
+    public Profile getProfileByUser(User user) {
+       return  profileRepository.findByUser(user);
     }
 }

@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class PremiumRequest {
-   private Long id;
+
    private Double premium;
 
    private String email;

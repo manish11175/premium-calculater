@@ -11,6 +11,7 @@ import javax.validation.Valid;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/api")
 public class RegisterController {
     @Autowired
     private UserService userService;

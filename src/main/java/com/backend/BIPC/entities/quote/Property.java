@@ -15,7 +15,7 @@ import javax.persistence.*;
 @ToString
 public class Property {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String item;
     private String model;

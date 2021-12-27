@@ -14,7 +14,7 @@ import javax.persistence.*;
 @ToString
 public class Premium {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Double premium;
     @ManyToOne

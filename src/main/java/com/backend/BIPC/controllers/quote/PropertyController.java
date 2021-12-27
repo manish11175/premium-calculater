@@ -6,13 +6,10 @@ import com.backend.BIPC.form.PropertyRequest;
 import com.backend.BIPC.services.auth.UserService;
 import com.backend.BIPC.services.quote.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
+@RequestMapping("/api")
 @CrossOrigin
 @RestController
 public class PropertyController {

@@ -21,7 +21,7 @@ import javax.validation.Valid;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/")
 public class LoginController {
 
     @Autowired

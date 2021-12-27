@@ -19,6 +19,7 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/api")
 public class PremiumController {
 
     @Autowired
@@ -60,13 +61,12 @@ public class PremiumController {
     @PostMapping("/quote/save-premium")
     public String savePremium(@Valid @RequestBody PremiumRequest premiumRequest){
 
-        System.out.println(premiumRequest);
 
         User user = userRepository.findByUsername(premiumRequest.getEmail());
 
         Property property = propertyRepository.findByUser(user);
 
-        System.out.println(property);
+
         Premium premium = new Premium(
                 null,
                 premiumRequest.getPremium(),
